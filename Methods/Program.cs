@@ -12,16 +12,22 @@ namespace Methods
         static void Main(string[] args)
         {
 
-            // Testing out the class
-            var point = new Point(10, 20);
-            point.Move(new Point(40, 60));
-            Console.WriteLine($"Point is at {point.X}, {point.Y}");
+            try
+            {
+                // Testing out the class
+                var point = new Point(10, 20);
+                point.Move(null);
+                Console.WriteLine($"Point is at {point.X}, {point.Y}");
 
-            // Second overload method
-            point.Move(100, 200);
-            Console.WriteLine($"Point is at {point.X}, {point.Y}");
+                // Second overload method
+                point.Move(100, 200);
+                Console.WriteLine($"Point is at {point.X}, {point.Y}");
+            }
+            catch (Exception)
+            {
 
-
+                Console.WriteLine("Error occured. Check your code");
+            }
         }
     }
 }
