@@ -11,7 +11,7 @@ namespace Properties
         public class Person
         {
 
-            public DateTime Birthdate { get; set; }
+            public DateTime Birthdate { get; private set; }
             public int Age
             {
                 get
@@ -22,12 +22,17 @@ namespace Properties
                     return years;
                 }
             }
+
+            // Since we set private setter, need to add birthdate via the initializer
+            public Person(DateTime birthdate)
+            {
+                this.Birthdate = birthdate;
+            }
         }
 
         static void Main(string[] args)
         {
-            var person = new Person();
-            person.Birthdate = new DateTime(1988, 6, 5);
+            var person = new Person(new DateTime(1988, 6, 5));
             Console.WriteLine("Age is {0}", person.Age);
         }
     }
