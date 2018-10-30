@@ -6,12 +6,32 @@ using System.Threading.Tasks;
 
 namespace Methods
 {
+
+    
         
     class Program
     {
         static void Main(string[] args)
         {
+            UseCalculator();
 
+            UsePoints();
+
+            // Example usage of int.TryParse
+            bool result = int.TryParse("abc", out int number);
+            Console.WriteLine($"Result: {result}, number: {number}");
+
+        }
+
+        static void UseCalculator()
+        {
+            var calculator = new Calculator();
+            Console.WriteLine(calculator.Add(1, 2));
+            Console.WriteLine(calculator.Add(1, 2, 29));
+        }
+
+        static void UsePoints()
+        {
             try
             {
                 // Testing out the class
