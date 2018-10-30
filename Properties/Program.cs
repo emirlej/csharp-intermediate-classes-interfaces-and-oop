@@ -10,8 +10,17 @@ namespace Properties
     {
         public class Person
         {
-
+            public string Name { get; set; }
+            public string UserName { get; set; }
             public DateTime Birthdate { get; private set; }
+
+
+            // Since we set private setter, need to add birthdate via the initializer
+            public Person(DateTime birthdate)
+            {
+                this.Birthdate = birthdate;
+            }
+
             public int Age
             {
                 get
@@ -23,11 +32,7 @@ namespace Properties
                 }
             }
 
-            // Since we set private setter, need to add birthdate via the initializer
-            public Person(DateTime birthdate)
-            {
-                this.Birthdate = birthdate;
-            }
+
         }
 
         static void Main(string[] args)
